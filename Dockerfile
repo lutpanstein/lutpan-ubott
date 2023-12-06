@@ -6,4 +6,4 @@ RUN git clone -b main https://github.com/lutpanstein/lutpan-ubott /home/main/ \
 
 WORKDIR /home/main/
 
-CMD [ "bash", "startup" ]
+CMD [ "bash", "start" ]
