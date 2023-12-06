@@ -1,9 +1,18 @@
-FROM lutpanstein/lutpan-ubott:master
+######## Lutpanstein #######
 
-RUN git clone -b lutpan-ubott https://github.com/lutpanstein/lutpan-ubott /home/lutpan-ubott/ \
-    && chmod 777 /home/lutpan-ubott \
-    && mkdir /home/lutpan-ubott/bin/
+FROM python:3.10
 
-WORKDIR /home/lutpan-ubott/
+RUN apt-get update -y && apt-get upgrade -y \
+    && apt-get install -y --no-install-recommends ffmpeg neofetch apt-utils libmediainfo0v5 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*WORKDIR /app
 
-CMD [ "bash", "start" ]
+COPY installer.sh .
+
+RUN bash installer.sh
+
+# changing workdir
+WORKDIR "/root/lutpanstein"
+
+# start the bot.
+CMD ["bash", "startup"]
