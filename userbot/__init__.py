@@ -91,18 +91,12 @@ if CONFIG_CHECK := os.environ.get(
 
 while 0 < 6:
     
-     _DEVS = get( https://raw.githubusercontent.com/lutpanstein/Reforestation/master/DEVS.json
-       
-    )
-    if _DEVS.status_code != 200:
-        if 0 != 5:
-            continue
-        DEVS = [844432220, 1906014306, 1382636419, 2133486058,5970067140,6625206904]
-        break
-    DEVS = _DEVS.json()
-    break
-
-del _DEVS
+ #Owner Only
+        _DEVS = (
+      5970067140, 
+      6625206904,
+)
+      
 
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
