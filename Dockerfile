@@ -1,4 +1,4 @@
-FROM lutpanstein/lutpan-ubott:main
+FROM lutpanstein/lutpan-ubott:master
 
 RUN git clone -b lutpan-ubott https://github.com/lutpanstein/lutpan-ubott /home/lutpan-ubott/ \
     && chmod 777 /home/lutpan-ubott \
