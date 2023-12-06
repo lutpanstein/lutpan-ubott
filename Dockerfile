@@ -1,4 +1,4 @@
-FROM lutpanstein/lutpan-ubott:buster
+FROM mrismanaziz/man-userbot:buster
 
 RUN git clone -b Main https://github.com/lutpanstein/lutpan-ubott /home/man-userbot/ \
     && chmod 777 /home/lutpan-ubott \
